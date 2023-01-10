@@ -16,6 +16,8 @@ cypress/videos
 /.next
 /out
 
+.env
+
 # next-sitemap
 public/robots.txt
 public/sitemap.xml
