@@ -15,6 +15,10 @@ import {
 
 const Links = [
   {
+    title: 'Home',
+    url: '/',
+  },
+  {
     title: 'Curriculum Vitae',
     url: '/curriculum-vitae',
   },
@@ -31,7 +35,7 @@ const NavLink = ({ title, url }: { title: string; url: string }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      bg: useColorModeValue('pink.100', 'gray.700'),
     }}
     href={url}
   >
@@ -65,10 +69,10 @@ export default function Navigation() {
                 display={{ md: 'none' }}
                 onClick={isOpen ? onClose : onOpen}
               />
-              <HStack spacing={8} alignItems={'center'}>
-                <Box>
-                  <NavLink url={'/'} title={'caomicc'} />
-                </Box>
+              <HStack spacing={4} alignItems={'center'}>
+                {/* <Box>
+                  <NavLink url={'/'} title={'👀'} />
+                </Box> */}
                 <HStack
                   as={'nav'}
                   spacing={4}

@@ -106,7 +106,8 @@ const renderInlineEmbeddedEntries: RenderNode = {
 
 const renderBlockEmbeddedEntries: RenderNode = {
   [BLOCKS.EMBEDDED_ENTRY]: (node, _children) => {
-    const { fields, sys } = node.data.target;
+    const { sys } = node.data.target;
+    // const { fields, sys } = node.data.target;
     const entryContentType = sys.contentType.sys.id || sys.id || '';
     switch (entryContentType) {
       case 'Video':

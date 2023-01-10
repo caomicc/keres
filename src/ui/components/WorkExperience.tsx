@@ -1,18 +1,23 @@
-import { Box, Stack } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 import type { TypeWorkExperience } from '@/api/generated-types';
 
+import { ChakraNextLink } from './ChakraNextLink';
+
 export const WorkExperience = ({ fields }: TypeWorkExperience) => {
-  const { jobTitle, description, employer, website, startDate, endDate } =
-    fields;
+  const { jobTitle, employer, website, endDate } = fields;
   return (
-    <Stack>
-      <Box>{jobTitle}</Box>
-      <Box>{description}</Box>
-      <Box>{employer}</Box>
-      <Box>{website}</Box>
-      <Box>{startDate}</Box>
-      <Box>{endDate}</Box>
-    </Stack>
+    <Box>
+      <Text lineHeight={8}>
+        {endDate ? 'Previously' : 'Currently'} {jobTitle} @{' '}
+        <ChakraNextLink
+          fontWeight={'700'}
+          color={'pink.600'}
+          href={website || ''}
+        >
+          {employer}
+        </ChakraNextLink>
+      </Text>
+    </Box>
   );
 };

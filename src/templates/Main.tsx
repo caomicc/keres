@@ -16,7 +16,7 @@ const Main = (props: IMainProps) => {
       <SkipNavLink>Skip to content</SkipNavLink>
       <Navigation />
       <SkipNavContent />
-      <Container maxW="2xl" mt={32}>
+      <Container maxW="2xl" mt={32} mb={16}>
         {props.meta}
         {props.children}
       </Container>
