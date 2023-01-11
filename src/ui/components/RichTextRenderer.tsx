@@ -262,7 +262,7 @@ export function getRichTextRenderOptions(
       const isEmptyChildren = children?.toString().trim() === '';
       if (isEmptyChildren) return null;
       return (
-        <Text fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}>{children}</Text>
+        <Text fontSize={{ base: 'md', md: 'lg', lg: 'lg' }}>{children}</Text>
       );
     },
     [BLOCKS.QUOTE]: (node, _children) => {

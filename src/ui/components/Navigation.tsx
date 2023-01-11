@@ -50,7 +50,7 @@ export default function Navigation() {
   return (
     <>
       <Box w={'full'} position={'fixed'} top={0}>
-        <Container maxW={'4xl'}>
+        <Container maxW={'3xl'}>
           <Box
             bg={useColorModeValue('white', 'gray.900')}
             borderWidth={2}

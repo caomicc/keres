@@ -8,6 +8,7 @@ export const ComponentContentTypes = {
   portfolioItem: 'portfolioItem',
   workExperience: 'workExperience',
   copy: 'copy',
+  skills: 'skills',
 };
 
 export const PageContentTypes = {

@@ -6,6 +6,7 @@ import { Award } from './Award';
 import { Copy } from './Copy';
 import { Education } from './Education';
 import { PortfolioItem } from './PortfolioItem';
+import { Skills } from './Skills';
 import { WorkExperience } from './WorkExperience';
 
 type BlockRendererProps = {
@@ -18,6 +19,7 @@ const ContentTypeMap = {
   [ComponentContentTypes.portfolioItem]: PortfolioItem,
   [ComponentContentTypes.workExperience]: WorkExperience,
   [ComponentContentTypes.copy]: Copy,
+  [ComponentContentTypes.skills]: Skills,
 };
 
 const BlockRenderer = ({ block }: BlockRendererProps) => {
