@@ -138,7 +138,7 @@ const renderBlockEmbeddedAsset: RenderNode = {
           ratio={
             fields.file.details.image.width / fields.file.details.image.height
           }
-          maxW={fields.file.details.image.width ?? 'full'}
+          maxW={fields.file.details.image.width / 2.5 ?? 'full'}
           w={'full'}
           // margin={'0 auto'}
         >
@@ -169,8 +169,10 @@ export function getRichTextRenderOptions(
     [INLINES.HYPERLINK]: (node, children) => (
       <ChakraNextLink
         href={node.data.uri}
-        target="_blank"
-        rel="nofollow noreferrer"
+        // target="_blank"
+        // rel="nofollow noreferrer"
+        fontWeight={700}
+        color={'blue.600'}
       >
         {children}
       </ChakraNextLink>
@@ -328,8 +330,8 @@ export function getRichTextRenderOptions(
               fontWeight={700}
               color={'blue.700'}
               href={_node.data.uri}
-              target="_blank"
-              rel="nofollow noreferrer"
+              // target="_blank"
+              // rel="nofollow noreferrer"
             >
               {childrenHyperlink}
             </ChakraNextLink>

@@ -6,12 +6,13 @@ import {
   Flex,
   HStack,
   IconButton,
-  Link,
   Stack,
   useColorMode,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
+
+import { ChakraNextLink } from './ChakraNextLink';
 
 const Links = [
   {
@@ -29,7 +30,7 @@ const Links = [
 ];
 
 const NavLink = ({ title, url }: { title: string; url: string }) => (
-  <Link
+  <ChakraNextLink
     px={2}
     py={1}
     rounded={'md'}
@@ -40,21 +41,23 @@ const NavLink = ({ title, url }: { title: string; url: string }) => (
     href={url}
   >
     {title}
-  </Link>
+  </ChakraNextLink>
 );
 
 export default function Navigation() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navBackgroundColor = useColorModeValue('white', 'gray.900');
+  const navBorderColor = useColorModeValue('pink.200', 'gray.900');
 
   return (
     <>
-      <Box w={'full'} position={'fixed'} top={0}>
-        <Container maxW={'3xl'}>
+      <Box w={'full'} position={'fixed'} top={0} zIndex={10}>
+        <Container maxW={'2xl'} padding={0}>
           <Box
-            bg={useColorModeValue('white', 'gray.900')}
+            bg={navBackgroundColor}
             borderWidth={2}
-            borderColor={useColorModeValue('pink.200', 'gray.900')}
+            borderColor={navBorderColor}
             px={4}
             my={4}
             py={0}

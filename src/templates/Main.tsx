@@ -2,6 +2,7 @@ import { Box, Container } from '@chakra-ui/react';
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav';
 import type { ReactNode } from 'react';
 
+import Footer from '@/ui/components/Footer';
 import Navigation from '@/ui/components/Navigation';
 
 type IMainProps = {
@@ -12,14 +13,17 @@ type IMainProps = {
 
 const Main = (props: IMainProps) => {
   return (
-    <Box>
+    <Box
+    // bgGradient="linear(to-b, gray.50, gray.200)"
+    >
       <SkipNavLink>Skip to content</SkipNavLink>
       <Navigation />
       <SkipNavContent />
-      <Container maxW="2xl" mt={32} mb={16}>
+      <Container maxW="2xl" pt={32} pb={6}>
         {props.meta}
         {props.children}
       </Container>
+      <Footer />
     </Box>
   );
 };
