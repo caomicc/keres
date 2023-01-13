@@ -1,8 +1,16 @@
-import { Box, Container, Divider, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Divider,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 import { ChakraNextLink } from './ChakraNextLink';
 
 export default function Footer() {
+  const linkColor = useColorModeValue('pink.600', 'blue.200');
+
   return (
     <>
       <Box w={'full'}>
@@ -11,15 +19,15 @@ export default function Footer() {
             <Divider mb={8} />
             <Text>
               🛠 Built with{' '}
-              <ChakraNextLink fontWeight={700} href={'#'}>
+              <ChakraNextLink fontWeight={700} href={'#'} color={linkColor}>
                 Next.js
               </ChakraNextLink>
               ,{' '}
-              <ChakraNextLink fontWeight={700} href={'#'}>
+              <ChakraNextLink fontWeight={700} href={'#'} color={linkColor}>
                 Contentful
               </ChakraNextLink>
               , and{' '}
-              <ChakraNextLink fontWeight={700} href={'#'}>
+              <ChakraNextLink fontWeight={700} href={'#'} color={linkColor}>
                 Vercel
               </ChakraNextLink>
               .

@@ -24,8 +24,12 @@ const Links = [
     url: '/curriculum-vitae',
   },
   {
-    title: 'Project Showcase',
-    url: '/project-showcase',
+    title: 'Gallery',
+    url: '/gallery',
+  },
+  {
+    title: 'Links',
+    url: '/links',
   },
 ];
 
@@ -33,6 +37,7 @@ const NavLink = ({ title, url }: { title: string; url: string }) => (
   <ChakraNextLink
     px={2}
     py={1}
+    fontWeight={700}
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
@@ -48,12 +53,12 @@ export default function Navigation() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navBackgroundColor = useColorModeValue('white', 'gray.900');
-  const navBorderColor = useColorModeValue('pink.200', 'gray.900');
+  const navBorderColor = useColorModeValue('pink.200', 'gray.700');
 
   return (
     <>
       <Box w={'full'} position={'fixed'} top={0} zIndex={10}>
-        <Container maxW={'2xl'} padding={0}>
+        <Container maxW={'2xl'} py={0} px={{ base: 4, md: 0 }}>
           <Box
             bg={navBackgroundColor}
             borderWidth={2}
@@ -91,7 +96,7 @@ export default function Navigation() {
                 </HStack>
               </HStack>
               <Flex alignItems={'center'}>
-                <Button onClick={toggleColorMode}>
+                <Button rounded={'lg'} onClick={toggleColorMode}>
                   {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
                 </Button>
               </Flex>

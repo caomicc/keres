@@ -13,7 +13,7 @@ type CopySimpleProps = Pick<TypeCopy, 'fields'>;
 export const Copy = ({ fields }: CopySimpleProps) => {
   const { copy } = fields;
   return (
-    <Stack spacing={6}>
+    <Stack spacing={4}>
       <RichTextRenderer richTextBodyField={copy} renderH2Links={false} />
     </Stack>
   );

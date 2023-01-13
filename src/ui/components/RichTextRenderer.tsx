@@ -17,6 +17,7 @@ import {
   Th,
   Tr,
   UnorderedList,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import type { RenderNode } from '@contentful/rich-text-react-renderer';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -162,6 +163,9 @@ export function getRichTextRenderOptions(
     renderText?: any;
   }
 ) {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const linkColor = useColorModeValue('pink.600', 'blue.200');
+
   const { renderH2Links } = options;
   // const { renderH2Links, renderNativeImg } = options;
 
@@ -172,7 +176,7 @@ export function getRichTextRenderOptions(
         // target="_blank"
         // rel="nofollow noreferrer"
         fontWeight={700}
-        color={'blue.600'}
+        color={linkColor}
       >
         {children}
       </ChakraNextLink>

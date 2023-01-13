@@ -5,6 +5,8 @@ export const PageContentType = 'page';
 export const ComponentContentTypes = {
   award: 'award',
   education: 'education',
+  gallery: 'gallery',
+  linkGroup: 'linkGroup',
   portfolioItem: 'portfolioItem',
   workExperience: 'workExperience',
   copy: 'copy',

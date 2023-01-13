@@ -5,6 +5,8 @@ import { ComponentContentTypes } from '../../api/constants';
 import { Award } from './Award';
 import { Copy } from './Copy';
 import { Education } from './Education';
+import { Gallery } from './Gallery';
+import { LinkGroup } from './LinkGroup';
 import { PortfolioItem } from './PortfolioItem';
 import { Skills } from './Skills';
 import { WorkExperience } from './WorkExperience';
@@ -16,6 +18,8 @@ type BlockRendererProps = {
 const ContentTypeMap = {
   [ComponentContentTypes.award]: Award,
   [ComponentContentTypes.education]: Education,
+  [ComponentContentTypes.gallery]: Gallery,
+  [ComponentContentTypes.linkGroup]: LinkGroup,
   [ComponentContentTypes.portfolioItem]: PortfolioItem,
   [ComponentContentTypes.workExperience]: WorkExperience,
   [ComponentContentTypes.copy]: Copy,
