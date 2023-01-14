@@ -27,7 +27,6 @@ const ContentTypeMap = {
 };
 
 const BlockRenderer = ({ block }: BlockRendererProps) => {
-  console.log('block', block);
   if (Array.isArray(block)) {
     return (
       <>

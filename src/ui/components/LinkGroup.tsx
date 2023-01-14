@@ -1,24 +1,15 @@
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  Heading,
-  SimpleGrid,
-  Stack,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Box, Heading, SimpleGrid, Stack } from '@chakra-ui/react';
 
 import type { TypeLinkGroup } from '@/api/generated-types';
 
-import { ChakraNextLink } from './ChakraNextLink';
+import { LinkFavoriteSection } from './LinkFavoriteSection';
+import { LinkWildCard } from './LinkWildCard';
 import { RichTextRenderer } from './RichTextRenderer';
 
-export const LinkGroup = ({ fields }: TypeLinkGroup) => {
+export type GroupProps = Pick<TypeLinkGroup, 'fields'>;
+
+export const LinkGroup = ({ fields }: GroupProps) => {
   const { title, description, sections } = fields;
-  const favoriteColor = useColorModeValue('pink.600', 'blue.200');
 
   return (
     <Stack pt={8}>
@@ -26,72 +17,21 @@ export const LinkGroup = ({ fields }: TypeLinkGroup) => {
       <RichTextRenderer richTextBodyField={description} renderH2Links={false} />
       <SimpleGrid columns={2} spacing={4}>
         <Box>
-          <Box
-            border={'2px solid'}
-            borderColor={favoriteColor}
-            rounded={'xl'}
-            padding={2}
-          >
-            {sections?.map((section: any) => (
-              <>
-                {section.fields.isFavorite ? (
-                  <Box key={section.id}>
-                    <Box as="span" flex="1" textAlign="left" fontSize={'xl'}>
-                      Favorites 💕
-                    </Box>
-
-                    {section.fields.URLs?.map((url: any) => (
-                      <Box key={url.id}>
-                        <ChakraNextLink href={url.fields.url}>
-                          {url.fields.name}
-                        </ChakraNextLink>
-                      </Box>
-                    ))}
-                  </Box>
-                ) : (
-                  ''
-                )}
-              </>
-            ))}
-          </Box>
+          {sections?.map((section: any) => {
+            return (
+              <LinkFavoriteSection
+                key={`favorites${section.sys.id}`}
+                fields={section.fields}
+              />
+            );
+          })}
         </Box>
         <Box>
-          <Box padding={0}>
-            <Accordion allowToggle>
-              {sections?.map((section: any) => (
-                <>
-                  {section.fields.isFavorite ? (
-                    <></>
-                  ) : (
-                    <AccordionItem key={section.id}>
-                      <Heading>
-                        <AccordionButton>
-                          <Box
-                            as="span"
-                            flex="1"
-                            textAlign="left"
-                            fontSize={'xl'}
-                          >
-                            {section.fields.title}
-                          </Box>
-                          <AccordionIcon />
-                        </AccordionButton>
-                      </Heading>
-                      <AccordionPanel pb={4}>
-                        {section.fields.URLs?.map((url: any) => (
-                          <Box key={url.id}>
-                            <ChakraNextLink href={url.fields.url}>
-                              {url.fields.name}
-                            </ChakraNextLink>
-                          </Box>
-                        ))}
-                      </AccordionPanel>
-                    </AccordionItem>
-                  )}
-                </>
-              ))}
-            </Accordion>
-          </Box>
+          <Stack spacing={4}>
+            {sections?.map((section: any) => {
+              return <LinkWildCard key={section.sys.id} section={section} />;
+            })}
+          </Stack>
         </Box>
       </SimpleGrid>
     </Stack>
