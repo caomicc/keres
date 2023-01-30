@@ -14,7 +14,7 @@ export type SectionProps = Pick<TypeLinkSection, 'fields'>;
 
 export const LinkSection = ({ fields }: SectionProps) => {
   const { title, URLs } = fields;
-  const titleColor = useColorModeValue('pink.600', 'gray.100');
+  const titleColor = useColorModeValue('pink.600', 'gray.400');
 
   return (
     <>

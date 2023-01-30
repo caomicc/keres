@@ -6,7 +6,7 @@ import { ChakraNextLink } from './ChakraNextLink';
 
 export const WorkExperience = ({ fields }: TypeWorkExperience) => {
   const { jobTitle, employer, website, endDate } = fields;
-  const linkColor = useColorModeValue('pink.600', 'blue.200');
+  const linkColor = useColorModeValue('pink.600', 'gray.400');
 
   return (
     <Box>

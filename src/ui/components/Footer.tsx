@@ -9,7 +9,7 @@ import {
 import { ChakraNextLink } from './ChakraNextLink';
 
 export default function Footer() {
-  const linkColor = useColorModeValue('pink.600', 'blue.200');
+  const linkColor = useColorModeValue('pink.600', 'gray.400');
 
   return (
     <>

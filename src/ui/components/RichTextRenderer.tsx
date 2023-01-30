@@ -164,7 +164,7 @@ export function getRichTextRenderOptions(
   }
 ) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const linkColor = useColorModeValue('pink.600', 'blue.200');
+  const linkColor = useColorModeValue('pink.600', 'gray.400');
 
   const { renderH2Links } = options;
   // const { renderH2Links, renderNativeImg } = options;

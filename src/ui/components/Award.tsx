@@ -6,7 +6,7 @@ import { ChakraNextLink } from './ChakraNextLink';
 
 export const Award = ({ fields }: TypeAward) => {
   const { name, issuer, certificateUrl } = fields;
-  const linkColor = useColorModeValue('pink.600', 'blue.200');
+  const linkColor = useColorModeValue('pink.600', 'gray.400');
   return (
     <Box>
       <Text lineHeight={8}>
