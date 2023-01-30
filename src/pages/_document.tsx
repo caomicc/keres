@@ -1,3 +1,4 @@
+import { ColorModeScript } from '@chakra-ui/react';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 import { AppConfig } from '@/utils/AppConfig';
@@ -22,6 +23,7 @@ class MyDocument extends Document {
           {/* <link rel="stylesheet" href="https://use.typekit.net/kgx8exk.css" /> */}
         </Head>
         <body>
+          <ColorModeScript initialColorMode={'dark'} />
           <Main />
           <NextScript />
         </body>
